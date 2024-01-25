@@ -1,0 +1,92 @@
+.MyNavBar{
+    box-shadow: 1px 3px 5px 2px grey;
+}
+
+
+
+.nav-link{
+    background: oragne!important;
+}
+
+.MainMenu{
+    *{
+        box-sizing: border-box;
+        margin: 0!important;
+        padding: 0!important;
+    }
+    > .ControlBtn{
+        display: flex;
+        > a{
+            flex: 50%;
+            display: flex;
+            z-index: 1;
+            align-items: center;
+            height:54px;
+            background: grey;
+            border: solid 1px lightblue;
+            img{
+                width: 54px;
+            }
+            &:nth-child(2){
+                justify-content: end;
+            }
+        }
+    }
+    > .MenuList{
+        display: none;
+        list-style: none;
+        >li{
+            background: yellow;
+            height: 54px;
+            display: flex;
+            >a{
+                background: lightgray;
+                color: #0f54a3ab;
+                display: flex;
+                flex: 100;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: .6s;
+                &:hover, 
+                &.Active{
+                    transition: .4s;
+                    background: white;
+                }
+            }
+        } 
+
+    }
+    &.OpenedMenu{
+        > .MenuList{
+            display: initial;
+        }
+        
+    }
+    @media (min-width: 1024px) {
+        display: flex;
+        > .ControlBtn{ 
+            > a{
+                &:nth-child(2){
+                    display: none;
+                }
+            }
+        }
+        > .MenuList{
+            flex: auto;
+            display: flex;
+            > li{
+                flex: auto;
+            }
+        }
+        > .ControlBtn{
+            > a{
+                > &:nth-child(2){
+                    display: none;
+                }
+            }
+        }    
+    }
+}
+    
